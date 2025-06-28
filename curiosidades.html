@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/manofsteel-icon.ico" type="image/x-icon">
     <title>Man of Steel - Quiz</title>
     <meta name="description" content="Teste seus conhecimentos sobre o Homem de Aço com nosso quiz interativo!">
     <link rel="shortcut icon" href="assets/manofsteel-icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="background-image second-container" alt="Man of Steel (2013)">
     <div class="header-container">
@@ -21,23 +20,21 @@
                 <section class="navegador-container">
                     <a href="index.html" title="Home">Home</a>
                     <a href="curiosidades.html" title="Curiosidades">Curiosidades/Quiz</a>
-                    <!-- <a href="noticias.html" title="Notícias">Notícias</a>
-                    <a href="galeria.html" title="galeria">Galeria</a>
-                    <a href="forum.html" title="Fórum">Fórum</a> -->
-                </section>
+                    </section>
             </nav>
         </header>
         <main class="main-container-quiz">
             <h1>Desvende este novo mundo com um quiz</h1>
             <button id="iniciar">Iniciar Quiz</button>
             <div id="quiz" style="display: none;">
-              <h2 id="pergunta"></h2>
-              <div id="opcoes"></div>
-              <div id="resultado"></div>
+                <h2 id="pergunta"></h2>
+                <div id="opcoes"></div>
+                <div id="resultado"></div>
             </div>
         </main>
     </div>
 
-    <script src="src/dados.js"></script>
-    <script src="src/app.js"></script>
+    <script src="js/dados.js"></script>
+    <script src="js/quiz.js"></script>
 </body>
+</html>

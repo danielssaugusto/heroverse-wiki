@@ -15,23 +15,24 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box; /* Adicionado para melhor controle do layout */
 }
 
 ::-webkit-scrollbar {
-    width: 10px; /* Adjust the width as needed */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: var(--cor-texto); /* Track color */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--cor-titulo); /* Thumb color */
-  }
+    width: 10px; /* Ajuste a largura conforme necessário */
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--cor-texto); /* Cor da trilha */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-titulo); /* Cor do "polegar" */
+}
 
 /* Base */
 html {
-    background-image: linear-gradient(to right,  black, rgb(0, 0, 0), rgb(2, 2, 123)); /* Cor de fundo da página */
+    background-image: linear-gradient(to right, black, rgb(0, 0, 0), rgb(2, 2, 123)); /* Cor de fundo da página */
     color: var(--cor-titulo); /* Cor principal dos textos */
 }
 
@@ -44,12 +45,13 @@ body {
     display: flex; /* Usa Flexbox para layout */
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
+    min-height: 100vh; /* Garante que o corpo ocupa pelo menos 100% da altura da viewport */
 }
 
 .header-container,
 header {
     padding: 5px 0 0 0;
-    border-radius: 0  0 0.5rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
     border: 1px solid rgba(0, 0, 255, 0.285);
     background-color: rgba(0, 0, 255, 0.252);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -109,6 +111,7 @@ section button {
     font-weight: 500;
     color: var(--cor-titulo); /* Cor do texto do botão */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionado para suavizar a transição */
 }
 
 section button:hover {
@@ -129,10 +132,12 @@ section a > img {
 
 /* Conteúdo princípal da página */
 main {
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 /* Estiliza o rodapé da página */
@@ -142,8 +147,8 @@ footer {
     text-align: center; /* Alinha o texto ao centro */
     padding-bottom: 10px; /* Espaçamento interno */
     width: 100%; /* Largura total da página */
-    bottom: 0; /* Alinha ao fundo da página */
     border-top: 2px solid #002F6C;
+    margin-top: auto; /* Garante que o footer fique no final da página */
 }
 
 footer p {
@@ -174,6 +179,7 @@ footer a:hover {
 .navegador-container a {
     color: var(--cor-titulo);
     font-weight: bold;
+    transition: color 0.3s ease; /* Adicionado para suavizar a transição */
 }
 
 .navegador-container a:hover {
@@ -202,10 +208,12 @@ footer a:hover {
 }
 
 .main-section {
-    height: 100vh;
     width: 1200px;
     overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
-
+    display: flex; /* Garante que a seção principal use flexbox */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Adicionado padding para melhor espaçamento */
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
@@ -213,6 +221,11 @@ footer a:hover {
     margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0.6rem; /* Borda arredondada */
+    display: flex; /* Adicionado para flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
 .card-container {
@@ -227,8 +240,13 @@ footer a:hover {
     text-align: center;
     box-shadow: 1px 1px 5px rgba(130, 130, 130, 0.5);
     cursor: pointer;
+    transition: transform 0.3s ease; /* Adicionado para efeito hover */
 }
-  
+
+.card-container:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+}
+
 .card-container img {
     width: 100%;
     height: 300px;
@@ -236,7 +254,7 @@ footer a:hover {
     object-fit: cover;
     object-position: top;
     z-index: 1;
-    filter: pixelate(100px);
+    filter: none; /* Removido filter: pixelate(100px); que estava deixando a imagem pixelizada */
 }
 
 /* Estiliza cada item de resultado */
@@ -251,6 +269,7 @@ footer a:hover {
 .item-resultado h2 {
     font-size: 1.5rem; /* Tamanho da fonte */
     color: var(--cor-titulo); /* Cor do texto */
+    margin-top: 10px; /* Adicionado espaçamento */
 }
 
 /* Estiliza os links dentro dos itens de resultado */
@@ -262,11 +281,14 @@ footer a:hover {
     margin-top: auto;
     padding: 10px;
     background-color: rgb(73, 72, 94);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionado para suavizar a transição */
 }
 
 /* Estiliza os links quando são passados o mouse sobre */
 .item-resultado a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    background-color: var(--cor-principal);
+    color: var(--cor-titulo);
 }
 
 .descricao {
@@ -274,6 +296,8 @@ footer a:hover {
     flex-direction: column;
     padding: 0 1rem;
     background-color: rgb(73, 72, 94);
+    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante no card */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
@@ -290,16 +314,17 @@ footer a:hover {
 
 .icon {
     font-size: 2.2rem;
+    transition: color 0.3s ease; /* Adicionado para suavizar a transição */
 }
 
 /* Página: Curiosidades */
 .second-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh; /* Ajustado para min-height */
     font-size: 1.5rem;
     background-image: linear-gradient(to right, black, rgb(69, 69, 88)); /* Cor de fundo da página */
-    background-size: auto;
+    background-size: cover; /* Ajustado para cobrir a área */
 }
 
 .second-header {
@@ -309,8 +334,19 @@ footer a:hover {
     background-color: transparent;
 }
 
+.main-container-quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+    padding: 20px;
+    text-align: center;
+}
+
 .main-container-quiz h1 {
     color: var(--cor-destaque);
+    margin-bottom: 2rem;
 }
 
 /* Estilo para o botão "Iniciar Quiz" */
@@ -326,7 +362,7 @@ footer a:hover {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     width: 10rem;
     margin: 2rem;
 }
@@ -341,35 +377,40 @@ footer a:hover {
 }
 
 #pergunta {
-    font-size: 1.2em;
+    font-size: 1.8em; /* Aumentado o tamanho da fonte */
     margin: 2.5rem 0;
+    max-width: 800px; /* Adicionado para limitar a largura do texto da pergunta */
 }
 
 #opcoes {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Aumentado o espaçamento entre as opções */
+    width: 80%; /* Ajustado para melhor responsividade */
+    max-width: 600px; /* Limitado a largura máxima */
 }
 
 #opcoes button {
-    padding: 10px;
+    padding: 15px 20px; /* Ajustado o padding */
     background-color: var(--cor-principal);
     color: var(--cor-titulo);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Ajustado o tamanho da fonte */
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 #opcoes button:hover {
     background-color: var(--cor-secundaria);
     color: var(--cor-destaque);
-    transition: 0.25s ease;
 }
 
 #resultado {
     color: var(--cor-destaque);
-    font-size: 1.2em;
-    margin-top: 20px;
+    font-size: 1.5em; /* Aumentado o tamanho da fonte */
+    margin-top: 30px; /* Aumentado o espaçamento */
     padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4); /* Adicionado um fundo para destaque */
+    border-radius: 8px;
 }

@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <!-- Charset e viewport -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Metadados -->
-        <meta name="description" content="Descubra tudo sobre o universo do filme Man of Steel (2013) no nosso fandom!">
-        <meta name="author" content="Daniel Augusto">
-        
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="assets/manofsteel-icon.ico" type="image/x-icon">
-        
-        <!-- Fontes e estilos -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-        <link rel="stylesheet" href="style.css">
-        
-        <!-- Título da página -->
-        <title>Man of Steel - Fandom</title>
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Descubra tudo sobre o universo do filme Man of Steel (2013) no nosso fandom!">
+    <meta name="author" content="Daniel Augusto">
+
+    <link rel="shortcut icon" href="assets/manofsteel-icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Man of Steel - Fandom</title>
+</head>
+
 <body class="background-image" alt="Man of Steel (2013)">
-    <!-- Cabeçalho da página -->
     <header>
         <div class="logotipo" title="Man of Steel - Fandom">
             <a href="index.html">
@@ -33,14 +27,13 @@
             <section class="navegador-container">
                 <a href="index.html" title="Home"><img src="assets/home_24dp.png" alt="Home">Home</a>
                 <a href="curiosidades.html" title="Curiosidades"><img src="assets/quiz_24dp.png" alt="Quiz">Curiosidades/Quiz</a>
-                <!-- <a href="noticias.html" title="Notícias">Notícias</a>
-                <a href="galeria.html" title="galeria">Galeria</a>
-                <a href="forum.html" title="Fórum">Fórum</a> -->
-
+                <a href="noticias.html" title="Notícias">Notícias</a>
+                <a href="galeria.html" title="Galeria">Galeria</a>
+                <a href="forum.html" title="Fórum">Fórum</a>
                 <section class="pesquisa">
                     <div class="pesquisa-posicao">
                         <input type="text" id="pesquisa" placeholder="Explore este mundo...">
-                        <button onclick="pesquisar()" type="button" title="Pesquisar" id="button-pesquisa">Pesquisar</button>
+                        <button type="button" title="Pesquisar" id="button-pesquisa">Pesquisar</button>
                     </div>
                 </section>
             </section>
@@ -49,24 +42,24 @@
 
     <main>
         <section class="main-section">
-            <section class="resultados-pesquisa" id="resultados-pesquisa">
+            <div class="resultados-pesquisa" id="resultados-pesquisa">
                 <div class="imagem-apresentacao">
                     <h2>"Bem-vindo(a) ao planeta"</h2>
                     <p> - Lois Lane</p>
                     <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/T6DJcgm3wNY?autoplay=1&loop=1&playlist=T6DJcgm3wNY&modestbranding=1&rel=0"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
+                        src="https://www.youtube.com/embed/T6DJcgm3ViE"
+                        title="Man of Steel - Official Trailer 3 [HD]"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
                     </iframe>
                 </div>
-            </section>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Man of Steel Fandom</p>
+        <p>© 2024 Man of Steel Fandom</p>
         <p>Meus links:</p>
         <div class="icon-links">
             <a href="https://github.com/danielssaugusto" target="_blank" title="GitHub">
@@ -77,8 +70,8 @@
             </a>
         </div>
     </footer>
-    
-    <script src="src/dados.js"></script>
-    <script src="src/app.js"></script>
+
+    <script src="js/dados.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
