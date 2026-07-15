@@ -1,4 +1,4 @@
-# Man of Steel Fandom
+# Man of Steel - Heroverse Wiki
 
 ## Sobre o Projeto
 
